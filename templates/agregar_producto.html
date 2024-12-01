@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{% if producto %}Editar{% else %}Agregar{% endif %} Producto</h2>
+    <form method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="{{ producto[1] if producto else '' }}" required>
+        <label for="precio_publico">Precio Público:</label>
+        <input type="text" name="precio_publico" id="precio_publico" value="{{ producto[2] if producto else '' }}" required>
+        <label for="precio_distribuidor">Precio Distribuidor:</label>
+        <input type="text" name="precio_distribuidor" id="precio_distribuidor" value="{{ producto[3] if producto else '' }}" required>
+        <label for="stock">Stock:</label>
+        <input type="number" name="stock" id="stock" value="{{ producto[4] if producto else '' }}" required>
+        <button type="submit">{% if producto %}Actualizar{% else %}Agregar{% endif %} Producto</button>
+    </form>
+{% endblock %}

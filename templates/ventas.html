@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Realizar Venta</h2>
+    <form method="POST">
+        <label for="id_producto">ID Producto:</label>
+        <input type="number" name="id_producto" id="id_producto" required>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" id="cantidad" required>
+        <button type="submit">Realizar Venta</button>
+    </form>
+{% endblock %}
